@@ -19,7 +19,7 @@ public class StoreServiceFeign implements StoreService {
 	
 	@Override
 	public List<Store> findAll() {
-		return clientFeign.list().stream().map(p-> new Store(p, 5)).collect(Collectors.toList());
+		return clientFeign.list().stream().map(p-> new Store(p, 6)).collect(Collectors.toList());
 	}
 
 	@Override
