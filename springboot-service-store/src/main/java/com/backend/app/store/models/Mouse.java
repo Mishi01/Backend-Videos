@@ -14,7 +14,12 @@ public class Mouse {
 	private Date createAt;
 	
 	private Integer port;
-
+	
+	public Mouse(Long id, String name, String marca) {
+		this.id = id;
+		this.name= name;
+		this.marca = marca;
+	}
 	public Long getId() {
 		return id;
 	}

@@ -37,6 +37,10 @@ public class MouseController {
 	
 	@GetMapping("/mouse/{id}")
 	public Mouse detail(@PathVariable Long id) {
+		
+//		boolean b1 = false;
+//		if(!b1)
+//			throw new RuntimeException("No se puede obtener el detalle del celular");
 		return service.findById(id);
 	}
 	
