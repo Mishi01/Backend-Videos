@@ -1,16 +1,19 @@
 package com.microservice.zuul.filters;
-import javax.servlet.http.HttpServletRequest;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
-import com.netflix.zuul.exception.ZuulException;
-import com.maxmind.geoip2.DatabaseReader;
-import com.maxmind.geoip2.model.CityResponse;
 
 import java.io.File;
 import java.net.InetAddress;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import com.maxmind.geoip2.DatabaseReader;
+import com.maxmind.geoip2.model.CityResponse;
+import com.netflix.zuul.ZuulFilter;
+import com.netflix.zuul.context.RequestContext;
+import com.netflix.zuul.exception.ZuulException;
 
 @Component
 public class GeoLocationPreFilter extends ZuulFilter {
@@ -47,7 +50,6 @@ public class GeoLocationPreFilter extends ZuulFilter {
                 CityResponse response = dbReader.city(ipAddress);
 
                 String userLocation = response.getCity().getName();
-                String countryCode = response.getCountry().getIsoCode();
 
                 request.setAttribute("userLocation", userLocation);
                 log.info(userLocation);

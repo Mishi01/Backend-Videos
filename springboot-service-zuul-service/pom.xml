@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.microservice.zuul</groupId>
 	<artifactId>springboot-service-zuul-service</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-service-zuul-service</name>
 	<description>Microservicio de prueba</description>
 	<properties>
@@ -41,11 +41,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			    <groupId>com.maxmind.geoip2</groupId>
-			    <artifactId>geoip2</artifactId>
-			    <version>2.16.0</version> 
-		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -56,6 +51,11 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<dependency>
+			    <groupId>com.maxmind.geoip2</groupId>
+			    <artifactId>geoip2</artifactId>
+			    <version>2.16.0</version> 
+		</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -67,5 +67,15 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 </project>
