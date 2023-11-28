@@ -12,10 +12,12 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.microservice.commons.users.entity.Usuario;
 import com.microservice.oauth.client.UsuarioFeignClient;
 
+@Service
 public class UsuarioService implements UserDetailsService{
 
 	private Logger log = LoggerFactory.getLogger(UsuarioService.class);

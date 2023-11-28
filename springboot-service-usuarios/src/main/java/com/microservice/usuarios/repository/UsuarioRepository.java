@@ -12,7 +12,7 @@ public interface UsuarioRepository extends PagingAndSortingRepository<Usuario, L
 
 	//select u from Usuario u where u.username = ?1
 	@RestResource(path="buscar-username")
-	public Usuario findByUsername(@Param("nombre")String username);
+	public Usuario findByUsername(@Param("username")String username);
 	
 	//select u from Usuario u where u.username = ?1 and u.email = ?2
 	public Usuario findByUsernameAndEmail(@Param("username")String username, @Param("email")String email);
